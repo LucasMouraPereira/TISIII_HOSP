@@ -1,0 +1,43 @@
+<%- include ('./partials/header.ejs') %>
+<div class="table-responsive">
+    <div class="container">
+        <div class="card">
+            <%- include ('./partials/cardHeader.ejs') %>
+            <hr>
+            <div class="card-body ">
+                <div class="container">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Numero Secretaria</th>
+                                <th>Nome do paciente</th>
+                                <th>e-mail</th>
+                                <th>Fone</th>
+                                <th>Data do cadastro</th>
+                                <th>Data de retorno</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% records.forEach(records => { %>
+                                <tr>
+                                    <td><%= records.numeroSecretaria %></td>
+                                    <td><%= records.nome %></td>
+                                    <td><%= records.email %></td>
+                                    <td><%= records.telefone %></td>
+                                    <td><%= records.data_cadastro %></td>
+                                    <td><%= records.data_retorno %></td>
+                                    <td><%= records.status %></td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                    <br>
+                    <a class="btn btn-success" href="">Exportar dados para excel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ('./partials/footer.ejs') %>
