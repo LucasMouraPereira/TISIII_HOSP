@@ -28,7 +28,7 @@ connection
     });
 
 app.use("/", records);
-app.use("/filter", filter);
+app.use("/", filter);
 
 app.listen(8080, () => {
     console.log("O servidor esta rodando");
