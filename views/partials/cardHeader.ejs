@@ -3,16 +3,22 @@
         <h3>RELATÓRIO DE PACIENTES DO HOSPITAL SÃO FRANCISCO DE ASSIS</h3>
     </div>
     <div class="container">
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Selecione</button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="../index.ejs">Data de Retorno</a>
-            <div role="separator" class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Status</a>
-          </div>
+      <form>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"> 
+            <select class="btn btn-outline-success dropdown-toggle" id="inlineFormCustomSelect">
+              <div class="dropdown-menu">
+                <option selected>Selecione...</option>
+                <option name= "data" value= "1" >Data de Retorno</option>
+                <option name= "status/<%= records.status %>" value= "2">Status</option>
+              </div>
+            </select> 
         </div>
-        <input type="text" class="form-control" aria-label="Input text com botão dropdown">
-      </div>
-      </div>
+          &ensp;
+            <input type="text" class="form-control" aria-label="Input text com botão dropdown" placeholder="">
+          &ensp;
+          <button class ="btn btn-success">Filtar</button>
+        </div>
+      </form>
+    </div>
 </div>
