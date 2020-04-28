@@ -8,21 +8,21 @@
           <div class="input-group-prepend"> 
             <select class="btn btn-outline-success dropdown-toggle" id="inlineFormCustomSelect">
               <div class="dropdown-menu">
-                <option selected>Selecione...</option>
+                <option selected>Selecione o Filtro</option>
                 <!-- colocar a rota data -->
-                <option name= "data" value= "1" >Data de Retorno</option>
+                <option name= "data" value= "5" >Data de Retorno</option>
                 <!-- colocar a rota status -->
-                <option name= "status/<%= records.status %>" value= "2">Status</option>
+                <option name= "status" value= "6">Status</option>
               </div>
             </select> 
         </div>
           &ensp;
             <!-- colocar a rota  :data ou :status -->
-            <input type="text" class="form-control" aria-label="Input text com botão dropdown" placeholder=""> 
+            <input type="text" class="form-control" id="myFilter" onkeyup="filter()" aria-label="Input text com botão dropdown" placeholder=""> 
             
-          &ensp;
+          <!-- &ensp; -->
           <!-- filtar a rota acima -->
-          <button class ="btn btn-success">Filtar</button>
+          <!-- <button class ="btn btn-success">Filtar</button> -->
         </div>
       </form>
     </div>
