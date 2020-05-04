@@ -6,7 +6,9 @@
             <hr>
             <div class="card-body ">
                 <div class="container">
-                    <table class="table table-bordered">
+                    <a class="btn btn-success" href="/">Mostrar todos os registros</a>
+                    <hr>
+                    <table class="table table-bordered" id="myTable">
                         <thead>
                             <tr>
                                 <th>Numero Secretaria</th>
@@ -33,7 +35,9 @@
                         </tbody>
                     </table>
                     <br>
-                    <a class="btn btn-success" href="">Exportar dados para excel</a>
+                    <a class="btn btn-success" href="/export/tocsv">Exportar dados para excel</a>
+                    <a class="btn btn-primary" href="/data/:data_retorno/export/tocsv">Exportar dados para excel data</a>
+                    <a class="btn btn-secundary" href="/status/:status/export/tocsv">Exportar dados para excel status</a>
                 </div>
             </div>
         </div>

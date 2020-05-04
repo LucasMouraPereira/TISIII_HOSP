@@ -1,7 +1,6 @@
 {
   "name": "hospital_sao_francisco",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node src/app.js",
@@ -13,10 +12,13 @@
     "body-parser": "^1.19.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "json2csv": "^5.0.0",
     "mysql2": "^2.1.0",
-    "sequelize": "^5.21.5"
+    "sequelize": "^5.21.5",
+    "uuid": "^7.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
-  }
+  },
+  "description": ""
 }

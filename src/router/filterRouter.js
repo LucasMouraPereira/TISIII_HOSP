@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const filterController = require('../controller/filterController');
 
-router.get('/data',filterController.data);
+router.get('/data/:data_retorno', filterController.data);
 
-router.get('/status',filterController.status);
+router.get('/status/:status', filterController.status);
 
 module.exports = router;
