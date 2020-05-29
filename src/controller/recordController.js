@@ -1,4 +1,6 @@
 const Record = require("../model/record");
+const mail = require("../infra/sendMail");
+
 
 module.exports = {
     index: async (req, res) =>{
@@ -13,14 +15,18 @@ module.exports = {
         }
         try{
             if(await ! Record.findOne({ numeroSecretaria })){
-                return res.status(400).send({error: 'Categoria já resgistada!'});
+                return res.status(400).send({error: 'Paciente já resgistado!'});
             } 
         const record = await Record.create(req.body);
+
+        mail.sendMail(email, nome, data_retorno);
+        
         return res.status(201).send(record);
+
         }
         catch(err){
             if(err){
-                return res.status(500).send({error: 'Erro ao buscar categoria!' });
+                return res.status(500).send({error: 'Erro ao buscar registro!' });
             }
         }
     }

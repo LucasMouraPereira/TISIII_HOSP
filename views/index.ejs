@@ -6,7 +6,9 @@
             <hr>
             <div class="card-body ">
                 <div class="container">
-                    <table class="table table-bordered">
+                    <a class="btn btn-success" href="/">Mostrar todos os registros</a>
+                    <hr>
+                    <table class="table table-bordered" id="myTable">
                         <thead>
                             <tr>
                                 <th>Numero Secretaria</th>
@@ -33,11 +35,30 @@
                         </tbody>
                     </table>
                     <br>
-                    <a class="btn btn-success" href="">Exportar dados para excel</a>
+                    <div class="container">
+                        <form method="GET">
+                          <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Selecine o status
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="/export/tocsv">Exportar dados para excel</a>
+                                <% records.forEach(records => { %>
+                                    <a class="dropdown-item" href="/data/<%= records.data_retorno %>/export/tocsv">Exportar dados para excel filtrados por data</a>
+                                <% }) %>
+                                <% records.forEach(records => { %>
+                                    <a class="dropdown-item" href="/status/<%= records.status %>/export/tocsv">Exportar dados para excel filtrados por status</a>
+                                <% }) %>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <%- include ('./partials/footer.ejs') %>
